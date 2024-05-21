@@ -1,28 +1,28 @@
 import { Schema, model } from "mongoose"
 
-const UserSchema = new Schema(
+const portfolioSchema = new Schema(
   {
-    username: {
+    name: {
       type: String,
       required: false,
       unique: true,
     },
-    email: {
+    description: {
       type: String,
       required: true,
-      unique: true,
     },
-    password: {
+    image: {
       type: String,
       required: true,
-      select: false // Esto hace que la contraseña no se devuelva por defecto
     },
-    role: {
+    technologies: {
+      type: Array,
+      required: true,
+    },
+    github: {
       type: String,
-      enum: ["user", "admin"],
-      default: "user",
+      required: true,
     },
-
   },
   {
     timestamps: true,
@@ -30,6 +30,6 @@ const UserSchema = new Schema(
   }
 )
 
-const User = model("User", UserSchema)
+const Portfolio = model("Portfolio", portfolioSchema)
 
-export default User
+export default Portfolio
