@@ -1,10 +1,10 @@
 import express from "express"
 import * as Controller from "./controller"
 import { auth } from "../../middlewares/auth"
-import { isAdmin } from "../../middlewares/isAdmin"
+
 
 const portfolioRouter = express.Router()
 
-
+portfolioRouter.post("/", auth, Controller.postProject)
 
 export default portfolioRouter

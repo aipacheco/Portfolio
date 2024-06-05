@@ -19,10 +19,24 @@ const portfolioSchema = new Schema(
       type: Array,
       required: true,
     },
+    level:{
+      type: String,
+      enum:["Básico", "Avanzado"],
+      required:true
+    },
     github: {
       type: String,
       required: true,
     },
+    highlitedCode:{
+      type:String
+    },
+    comment:{
+      type:String
+    },
+    date:{
+      type: String
+    }
   },
   {
     timestamps: true,
